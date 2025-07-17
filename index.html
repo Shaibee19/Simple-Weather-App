@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Weather</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER SECTION -->
+    <header>
+      <div class="logo">
+        <span id="app__title">City Weather</span>
+      </div>
+      <div class="date__display">
+        <div class="day" id="currentDay">Today</div>
+        <div class="full__date" id="currentDate">07/16/2025</div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+      <!-- SIDEBAR -->
+      <div class="sidebar">
+        <div class="profile">
+          <div class="profile__img">🌱</div>
+          <div class="profile__name" id="profileName">ShyB</div>
+          <div class="profile__email" id="profileEmail">ladedah@muse.com</div>
+        </div>
+        <div class="sidebar__buttons">
+          <button class="sidebar__button" data-selection="taskList">
+            📋 Task List
+          </button>
+          <button class="sidebar__button" data-selection="digitalVisionBoard">
+            📈 Digital Vision Board
+          </button>
+          <button class="sidebar__button" data-selection="macroCalculator">
+            🧮 Macro Calculator
+          </button>
+          <button class="sidebar__button" data-selection="workoutMealPlanner">
+            💪 Workout/Meal Planner
+          </button>
+          <button class="sidebar__button" data-selection="monthlyTracker">
+            💰 Monthly Tracker
+          </button>
+          <button class="sidebar__button" data-selection="moodTracker">
+            💫 Mood Tracker
+          </button>
+          <button class="sidebar__button" data-selection="countdownTimer">
+            🕘 Countdown Timer
+          </button>
+          <button class="sidebar__button" data-selection="qotdGenerator">
+            💬 QOTD Generator
+          </button>
+          <button class="sidebar__button" data-selection="cityWeather">
+            🌤️ City Weather
+          </button>
+        </div>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="main__content">
+        <!-- WEATHER SECTION -->
+        <div class="weather__widget">
+          <h1 class="widget__title">Live City Weather Search</h1>
+
+          <!-- SEARCH SECTION -->
+          <div class="search__area">
+            <input
+              type="text"
+              id="city__input"
+              placeholder="Enter city name here..."
+            />
+            <button id="search__button">Search Weather</button>
+          </div>
+
+          <!-- MESSAGE SECTION -->
+          <div class="message__box hidden" id="message__box">
+            <span id="message__text">No message yet</span>
+          </div>
+
+          <!-- DISPLAY SECTION -->
+          <div class="weather__display--card">
+            <h2 id="city__name">Search for a city</h2>
+            <div class="weather__icon">
+              <span id="weather__emoji">🤔</span>
+            </div>
+            <div class="temperature">--°F</div>
+            <div class="condition">N/A</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
