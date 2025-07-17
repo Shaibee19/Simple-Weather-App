@@ -1,60 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap");
 
 /* BASE */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Gabarito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gabarito", sans-serif;
 }
 
 body,
 html {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-    background-color: rbg(25, 25, 25);
-    color: white;
-}
-
-.container {
-    display: flex;
-    height: calc(100vh - 67px);
-    overflow: hidden;
-}
-
-.main__content {
-    flex-grow: 1;
-    padding: 20px;
-    padding-top: 50px;
-    overflow: auto;
+  background-color: rbg(25, 25, 25);
+  color: white;
 }
 
 /* HEADER */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: rgb(4, 9, 29);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: rgb(4, 9, 29);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 header .logo:before {
+  content: "🌞";
+  margin-right: 10px;
+  font-size: 28px;
+}
 
+#app__title {
+  color: white;
+}
+
+.date__display {
+  text-align: right;
+}
+
+.day {
+  font-weight: bold;
+}
+
+.full__date,
+#currentDate {
+  color: rgb(138, 43, 226);
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 67px);
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  background: rgb(4, 9, 29);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  border: 3px solid rgb(138, 43, 226);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  background-color: rgb(35, 35, 35);
+}
+
+.profile__name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.profile__email {
+  font-size: 12px;
+  opacity: 0.8;
+  color: #bbb;
+}
+
+.sidebar__button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar__button:hover {
+  background-color: rgba(138, 43, 226, 0.2);
+}
+
+.sidebar__button.active {
+  background-color: rgb(138, 43, 226);
 }
 
 /* MAIN CONTENT */
+.main__content { /* Why are there two of these ?? */
+  flex-grow: 1;
+  padding: 20px;
+  padding-top: 50px;
+  overflow: auto;
+}
+
 .main__content {
   padding: 30px; /* Padding around the content */
   display: flex; /* Use flexbox to center weather widget */
@@ -167,26 +252,26 @@ header .logo:before {
 }
 
 .weather__icon {
-    font-size: 96px; /* Large emoji size */
-    margin-bottom: 16px;
-    color: #fdd835; /* Bright yellow for emoji */
-    min-height: 96px; /* Ensure consistent height for emoji area */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 96px; /* Large emoji size */
+  margin-bottom: 16px;
+  color: #fdd835; /* Bright yellow for emoji */
+  min-height: 96px; /* Ensure consistent height for emoji area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .temperature {
-    font-size: 88px; /* Very large temperature text */
-    font-weight: 800;
-    color: #42a5f5; /* Bright blue for temperature */
-    margin-bottom: 14px;
-    line-height: 1; /* Prevent extra line spacing */
+  font-size: 88px; /* Very large temperature text */
+  font-weight: 800;
+  color: #42a5f5; /* Bright blue for temperature */
+  margin-bottom: 14px;
+  line-height: 1; /* Prevent extra line spacing */
 }
 
 .condition {
-    font-size: 32px;
-    text-align: center;
+  font-size: 32px;
+  text-align: center;
 }
 
 /* RESPONSIVENESS */
@@ -226,12 +311,12 @@ header .logo:before {
 }
 
 /* Screens up to 768px (tablets) */
-@media (max-width:768px) {
+@media (max-width: 768px) {
   header {
     flex-direction: column; /* Stack header items */
     height: auto;
     padding: 10px 15px;
-    text-align: center; 
+    text-align: center;
   }
   header .logo {
     margin-bottom: 10px;
@@ -315,7 +400,7 @@ header .logo:before {
     font-size: 22px;
   }
   header .logo:before {
-    font-size: 28px; 
+    font-size: 28px;
   }
   .date__display .day {
     font-size: 16px;
