@@ -188,3 +188,175 @@ header .logo:before {
     font-size: 32px;
     text-align: center;
 }
+
+/* RESPONSIVENESS */
+/* Screens up to 900px */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+  .sidebar__button {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+  .weather__widget {
+    max-width: 350px;
+  }
+  .widget__title {
+    font-size: 26px;
+  }
+  .search__area #city__input,
+  .search__area #search__button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  .weather__display--card h2 {
+    font-size: 28px;
+  }
+  .weather__icon {
+    font-size: 80px;
+  }
+  .temperature {
+    font-size: 72px;
+  }
+  .condition {
+    font-size: 24px;
+  }
+}
+
+/* Screens up to 768px (tablets) */
+@media (max-width:768px) {
+  header {
+    flex-direction: column; /* Stack header items */
+    height: auto;
+    padding: 10px 15px;
+    text-align: center; 
+  }
+  header .logo {
+    margin-bottom: 10px;
+  }
+  .date__display {
+    align-items: center; /* Center date text */
+    padding-right: 0;
+  }
+  .container {
+    flex-direction: column; /* Stack sidebar and main content */
+    overflow-y: auto; /* Allow scrolling for entire container */
+  }
+  .sidebar {
+    width: 100%; /* Full width sidebar */
+    min-width: unset;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  .profile {
+    margin-bottom: 25px;
+  }
+  .sidebar__buttons {
+    flex-direction: row; /* Buttons in a row */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center;
+    gap: 8px;
+  }
+  .sidebar__button {
+    width: auto; /* Auto width based on content */
+    padding: 10px 18px;
+    font-size: 16px;
+    margin: 0;
+  }
+  .sidebar__button:hover {
+    transform: none; /* Remove slide effect on small screens */
+  }
+  .main__content {
+    padding: 20px;
+    padding-top: 30px;
+    align-items: center;
+  }
+  .weather__widget {
+    max-width: 95%; /* Allow widget to take more width */
+    padding: 0; /* No padding on widget itself */
+  }
+  .widget__title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .search__area {
+    flex-direction: column; /* Stack input and button */
+    gap: 12px;
+    padding: 0; /* Remove search area padding for full width */
+  }
+  .search__area #city__input,
+  .search__area #search__button {
+    width: 100%;
+  }
+  /* Add padding back to the cuty input on mobile so it doesn't touch edges */
+  .search__area #city__input {
+    padding: 12px 16px;
+  }
+  .weather__display--card h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .weather__icon {
+    font-size: 72px;
+  }
+  .temperature {
+    font-size: 64px;
+  }
+  .condition {
+    font-size: 20px;
+  }
+}
+
+/* Screens up to 480px - very small (mobile) */
+@media (max-width: 480px) {
+  header .logo {
+    font-size: 22px;
+  }
+  header .logo:before {
+    font-size: 28px; 
+  }
+  .date__display .day {
+    font-size: 16px;
+  }
+  .date__display .full__date {
+    font-size: 12px;
+  }
+  .profile__img {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+  .profile__name {
+    font-size: 16px;
+  }
+  .profile__email {
+    font-size: 12px;
+  }
+  .sidebar__button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .widget__title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .search__area #city__input,
+  .search__area #search__button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .weather__display--card h2 {
+    font-size: 22px;
+  }
+  .weather__icon {
+    font-size: 64px;
+  }
+  .temperature {
+    font-size: 56px;
+  }
+  .condition {
+    font-size: 20px;
+  }
+}
